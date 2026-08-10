@@ -156,8 +156,6 @@ standard library package Views {
 			/*
 			 * The Views to be rendered in the column cells, in order, of each rows of the table.
 			 */
-		
-			abstract ref rendering :>> viewRendering[0..1];
 		}
 		rendering :>> subrenderings[0..*] = columnView.viewRendering;
 	}
