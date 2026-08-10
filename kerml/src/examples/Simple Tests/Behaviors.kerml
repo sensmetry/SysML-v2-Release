@@ -11,7 +11,7 @@ package Behaviors {
         out var y1;
     }
     class C {
-        var z = A().y;
+        var z = A(42).y;
         step a : A;
         step b : B;
         binding z = a.y;
