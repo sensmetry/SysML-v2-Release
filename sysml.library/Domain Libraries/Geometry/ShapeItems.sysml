@@ -261,7 +261,7 @@ standard library package ShapeItems {
 			item :>> edges [1];
 		}
 		item :>> edges : Ellipse [1] = shape {
-            attribute :>> Shell::edges::innerSpaceDimension, Ellipse::innerSpaceDimension;
+            attribute :>> Ellipse::innerSpaceDimension;
             ref item :>> Shell::edges::vertices, Ellipse::vertices;
 		}
 		item :>> vertices [0];
@@ -407,14 +407,14 @@ standard library package ShapeItems {
 
 		item :>> faces [2..3];
 		item base : Disc [1] :> faces {        
-            attribute :>> Disc::innerSpaceDimension, faces::innerSpaceDimension;
+            attribute :>> Disc::innerSpaceDimension;
             ref :>> Disc::edges, ConeOrCylinder::faces::edges {
                 attribute :>> Disc::edges::innerSpaceDimension, ConeOrCylinder::faces::edges::innerSpaceDimension;
             }
             ref :>> Disc::vertices, ConeOrCylinder::faces::vertices;		    
 		}
 		item af : Disc [0..1] :> faces {        
-            attribute :>> Disc::innerSpaceDimension, faces::innerSpaceDimension;
+            attribute :>> Disc::innerSpaceDimension;
             ref :>> Disc::edges, ConeOrCylinder::faces::edges {
                 attribute :>> Disc::edges::innerSpaceDimension, ConeOrCylinder::faces::edges::innerSpaceDimension;
             }
@@ -908,7 +908,7 @@ standard library package ShapeItems {
             ref :>> Rectangle::edges, Pyramid::base::edges;
             ref :>> Rectangle::vertices, Pyramid::base::vertices;            
 			attribute :>> base::length, Rectangle::length = RectangularPyramid::baseLength;
-			attribute :>> base::width, Rectangle::width   = RectangularPyramid::baseWidth;
+			attribute :>> base::width                       = RectangularPyramid::baseWidth;
 		}
 	}
 }

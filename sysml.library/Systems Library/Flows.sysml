@@ -79,8 +79,8 @@ standard library package Flows {
          * target input.
          */
          
-        end occurrence source: Occurrence :>> Message::source, FlowTransfer::source;
-        end occurrence target: Occurrence :>> Message::target, FlowTransfer::target;
+        end occurrence source: Occurrence :>> FlowTransfer::source;
+        end occurrence target: Occurrence :>> FlowTransfer::target;
     }
     
     abstract flow def SuccessionFlow :> Flow, FlowTransferBefore {
