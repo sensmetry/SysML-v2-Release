@@ -228,7 +228,7 @@ standard library package SysML {
 		metadata def ItemDefinition specializes Structure, OccurrenceDefinition;		
 		
 		metadata def ItemUsage specializes OccurrenceUsage {
-			derived ref item itemDefinition : Structure[0..*] ordered subsets occurrenceDefinition subsets Metadata::metadataItems subsets Metadata::metadataItems;
+			derived ref item itemDefinition : Structure[0..*] ordered subsets occurrenceDefinition subsets Metadata::metadataItems;
 		}		
 		
 		metadata def JoinNode specializes ControlNode;		

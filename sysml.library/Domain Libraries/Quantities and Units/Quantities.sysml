@@ -41,8 +41,8 @@ standard library package Quantities {
 	abstract attribute def VectorQuantityValue :> TensorQuantityValue, NumericalVectorValue {
 		attribute :>> mRef: MeasurementReferences::VectorMeasurementReference {
 			:>> mRef::dimensions, MeasurementReferences::VectorMeasurementReference::dimensions;
-			:>> mRef::isBound, MeasurementReferences::VectorMeasurementReference::isBound;
-			:>> mRef::order, MeasurementReferences::VectorMeasurementReference::order;
+			:>> MeasurementReferences::VectorMeasurementReference::isBound;
+			:>> MeasurementReferences::VectorMeasurementReference::order;
 		}
 	}
 
