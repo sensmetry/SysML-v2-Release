@@ -29,8 +29,8 @@ package '15.10-Primitive Data Types' {
 		/*
 		 * Example of restriction of the base Real datatype.
 		 */
-		attribute x: Real :>> self;
-		assert constraint { x >= 0.0 }
+		attribute : Real :>> self;
+		assert constraint { that >= 0.0 }
 	}
 	
 	private import ScalarValues::String {

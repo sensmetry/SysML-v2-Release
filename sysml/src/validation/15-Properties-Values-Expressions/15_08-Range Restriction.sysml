@@ -8,12 +8,12 @@ package '15_08-Range Restriction' {
 	}
 	
 	attribute def LightBeamTiltAngleValue :> PlaneAngleValue {
-		attribute angle: LightBeamTiltAngleValue :>> self {
+		attribute : LightBeamTiltAngleValue :>> self {
 			doc
 			/*
 			 * Tilt angle shall be limited to the range between 50 and 80 degrees (inclusive).
 			 */
 		}
-		assert constraint { angle >= 50 ['°'] and angle <= 80 ['°'] }
+		assert constraint { that >= 50 ['°'] and that <= 80 ['°'] }
 	}
 }
