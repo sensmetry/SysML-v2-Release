@@ -423,11 +423,11 @@ standard library package ShapeItems {
 		item cf : Surface [1] :> faces;
 
 		item :>> edges [2..4] = faces.edges;
-		item be [2] :> edges { 
+		item be [2] :> edges : Ellipse { 
 			attribute :>> semiMajorAxis = ConeOrCylinder::semiMajorAxis;
 			attribute :>> semiMinorAxis = ConeOrCylinder::semiMinorAxis;
 		}
-		item ae [0..2] :> edges {
+		item ae [0..2] :> edges : Ellipse {
 			attribute :>> semiMajorAxis = be.semiMajorAxis;
 			attribute :>> semiMinorAxis = be.semiMinorAxis;
 		}
@@ -561,7 +561,7 @@ standard library package ShapeItems {
             ref :>> Polygon::vertices, ConeOrCylinder::faces::vertices;            
         }
 		
-		item :>> edges = faces.edges;
+		item :>> edges : Line = faces.edges;
 		
 		attribute :>> outerSpaceDimension = if size(faces) > 2 ? 3 else 2;
 

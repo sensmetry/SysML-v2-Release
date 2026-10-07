@@ -21,7 +21,7 @@ package IssueMetadataExample {
         port drivePwrPort:DrivePwrPort;
     }
     part transmission{
-        port clutchPort:~DrivePwrPort;
+        port clutchPort:~ClutchPort;
     }
 
     interface engineToTransmissionInterface:EngineToTransmissionInterface

@@ -36,7 +36,7 @@ package ActionTest {
 			in sender;
 		}
 		action snd2 send via this to aa.target;
-		bind s = snd2.payload;
+		bind snd2.payload = s;
 	}
 	
 	action b {

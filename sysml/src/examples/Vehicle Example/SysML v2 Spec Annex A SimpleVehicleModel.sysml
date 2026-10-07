@@ -160,7 +160,7 @@ package SimpleVehicleModel{
             abstract part def Software;
             part def VehicleSoftware:>Software;
             part def VehicleController:>Software {
-                port controlPort:ControlPort;
+                port controlPort:CruiseControlPort;
                 exhibit state controllerStates parallel {
                     state operatingStates {
                         entry action initial; 
