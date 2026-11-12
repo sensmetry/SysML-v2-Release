@@ -11,7 +11,7 @@ standard library package <USCU> USCustomaryUnits {
     private import SI::*;
 
     attribute <'ac(us)'> 'acre (based on US survey foot)' : AreaUnit { :>> unitConversion: ConversionByConvention { :>> referenceUnit = m^2; :>> conversionFactor = 4.046873E+03; :>> isExact = false; } }
-    attribute <'ac(us)⋅ft(us)'> 'acre foot (based on US survey foot)' : VolumeUnit { :>> unitConversion: ConversionByConvention { :>> referenceUnit = m^3; :>> conversionFactor = 1.233489E+03; :>> isExact = false; } }
+    attribute <'ac(us)⋅ft(us)'> 'acre foot (based on US survey foot)' : VolumeUnit = 'ac(us)'*'ft(us)';
     attribute <bbl> 'barrel (for petroleum, 42 gallons (US))' : VolumeUnit { :>> unitConversion: ConversionByConvention { :>> referenceUnit = m^3; :>> conversionFactor = 1.589873E-01; :>> isExact = false; } }
     attribute <Btu_IT> 'British thermal unit (IT)' : EnergyUnit { :>> unitConversion: ConversionByConvention { :>> referenceUnit = J; :>> conversionFactor = 1.055056E+03; :>> isExact = false; } }
     alias Btu for Btu_IT;
@@ -146,7 +146,7 @@ standard library package <USCU> USCustomaryUnits {
     alias mph for 'mi/h';
     attribute <'mi/min'> 'mile per minute' : SpeedUnit = mi/min;
     attribute <'mi/s'> 'mile per second' : SpeedUnit = mi/s;
-    attribute <'Ω⋅cmil/ft'> 'ohm circular-mil per foot' : ResistivityUnit { :>> unitConversion: ConversionByConvention { :>> referenceUnit = 'Ω'*m; :>> conversionFactor = 1.662426E-09; :>> isExact = false; } }
+    attribute <'Ω⋅cmil/ft'> 'ohm circular-mil per foot' : ResistivityUnit = 'Ω'*cmil/ft;
     attribute <oz> 'ounce (avoirdupois)' : MassUnit { :>> unitConversion: ConversionByConvention { :>> referenceUnit = kg; :>> conversionFactor = 2.834952E-02; :>> isExact = false; } }
     alias 'ounce (US fluid)' for 'fluid ounce (US)';
     attribute <ozf> 'ounce (avoirdupois)-force' : ForceUnit { :>> unitConversion: ConversionByConvention { :>> referenceUnit = N; :>> conversionFactor = 2.780139E-01; :>> isExact = false; } }
@@ -214,7 +214,7 @@ standard library package <USCU> USCustomaryUnits {
     attribute <'ft²/s'> 'square foot per second' : KinematicViscosityUnit = ft^2/s;
     attribute <'in²'> 'square inch' : AreaUnit = 'in'^2;
     attribute <'mi²'> 'square mile' : AreaUnit = mi^2;
-    attribute <'mi(us)²'>'square mile (based on US survey foot)' : AreaUnit { :>> unitConversion: ConversionByConvention { :>> referenceUnit = m^2; :>> conversionFactor = 2.589998E+06; :>> isExact = false; } }
+    attribute <'mi(us)²'>'square mile (based on US survey foot)' : AreaUnit = 'mi(us)'^2;
     attribute <'yd²'> 'square yard' : AreaUnit = yd^2;
     attribute <tbsp> 'tablespoon' : VolumeUnit { :>> unitConversion: ConversionByConvention { :>> referenceUnit = m^3; :>> conversionFactor = 1.478676E-05; :>> isExact = false; } }
     attribute <tsp> 'teaspoon' : VolumeUnit { :>> unitConversion: ConversionByConvention { :>> referenceUnit = m^3; :>> conversionFactor = 4.928922E-06; :>> isExact = false; } }
@@ -223,12 +223,12 @@ standard library package <USCU> USCustomaryUnits {
     attribute <AT> 'ton, assay' : MassUnit { :>> unitConversion: ConversionByConvention { :>> referenceUnit = kg; :>> conversionFactor = 2.916667E-02; :>> isExact = false; } }
     attribute <'short tons-force'> 'ton-force (2000 lbf)' : ForceUnit { :>> unitConversion: ConversionByConvention { :>> referenceUnit = N; :>> conversionFactor = 8.896443E+03; :>> isExact = false; } }
     attribute <'ton'> 'ton, long (2240 lb)' : MassUnit { :>> unitConversion: ConversionByConvention { :>> referenceUnit = kg; :>> conversionFactor = 1.016047E+03; :>> isExact = false; } }
-    attribute <'tons/yd³'> 'ton, long, per cubic yard' : MassDensityUnit { :>> unitConversion: ConversionByConvention { :>> referenceUnit = kg/m^3; :>> conversionFactor = 1.328939E+03; :>> isExact = false; } }
+    attribute <'tons/yd³'> 'ton, long, per cubic yard' : MassDensityUnit = ton/yd^3;
     attribute <TR> 'ton of refrigeration (12 000 Btu_IT/h)' : PowerUnit { :>> unitConversion: ConversionByConvention { :>> referenceUnit = W; :>> conversionFactor = 3.516853E+03; :>> isExact = false; } }
     attribute <gt> 'ton, register' : VolumeUnit { :>> unitConversion: ConversionByConvention { :>> referenceUnit = m^3; :>> conversionFactor = 2.831685E+00; :>> isExact = false; } }
     attribute <'short ton'> 'ton, short (2000 lb)' : MassUnit { :>> unitConversion: ConversionByConvention { :>> referenceUnit = kg; :>> conversionFactor = 9.071847E+02; :>> isExact = false; } }
-    attribute <'short tons/yd³'> 'ton, short, per cubic yard' : MassDensityUnit { :>> unitConversion: ConversionByConvention { :>> referenceUnit = kg/m^3; :>> conversionFactor = 1.186553E+03; :>> isExact = false; } }
-    attribute <'short tons/h'> 'ton, short, per hour' : MassFlowRateUnit { :>> unitConversion: ConversionByConvention { :>> referenceUnit = kg/s; :>> conversionFactor = 2.519958E-01; :>> isExact = false; } }
+    attribute <'short tons/yd³'> 'ton, short, per cubic yard' : MassDensityUnit = 'short ton'/yd^3;
+    attribute <'short tons/h'> 'ton, short, per hour' : MassFlowRateUnit = 'short ton'/h;
     attribute <'unit pole'> 'unit pole' : MagneticFluxUnit { :>> unitConversion: ConversionByConvention { :>> referenceUnit = Wb; :>> conversionFactor = 1.256637E-07; :>> isExact = false; } }
     attribute <'W/in²'> 'watt per square inch' : DensityOfHeatFlowRateUnit = W/'in'^2;
     attribute <yd> 'yard' : LengthUnit { :>> unitConversion: ConversionByConvention { :>> referenceUnit = m; :>> conversionFactor = 9.144E-01; } }
